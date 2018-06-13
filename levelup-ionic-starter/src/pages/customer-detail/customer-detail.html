@@ -1,0 +1,59 @@
+<!--
+  Generated template for the AccountListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title *ngIf="customer !== null">{{ customer.givenName }} {{ customer.surname }}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <ion-list *ngIf="customer !== null">
+      <ion-item>
+          <ion-label>
+            <h2>D.O.B.</h2>
+          </ion-label>
+          
+          <ion-label item-right text-right>
+            {{ customer.birthDate }}
+          </ion-label>
+        </ion-item>
+      <ion-list-header *ngIf="bankAaccounts.length > 0">
+        Bank Accounts
+      </ion-list-header>
+  
+      <ion-item *ngFor="let account of bankAaccounts"  (click)="handleAccountClicked(account)">
+        <ion-label>
+          <h2>{{ account.maskedAccountNumber }}</h2>
+          <ion-note>{{ account.type }}</ion-note>
+        </ion-label>
+        
+        <ion-label item-right text-right>
+          {{ account.balance }} {{ account.currency }}
+        </ion-label>
+      </ion-item>
+  
+      <ion-list-header *ngIf="creditCardAaccounts.length > 0">
+        Credit Card Accounts
+      </ion-list-header>
+  
+      <ion-item *ngFor="let account of creditCardAaccounts"  (click)="handleAccountClicked(account)">
+        <ion-label>
+          <h2>{{ account.maskedNumber }}</h2>
+          <ion-note>{{ account.type }}</ion-note>
+        </ion-label>
+        
+        <ion-label item-right text-right>
+          {{ account.balance }} {{ account.currency }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

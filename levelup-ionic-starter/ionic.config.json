@@ -1,0 +1,9 @@
+{
+  "name": "levelup-ionic-starter",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "defaultBrowser": "google chrome"
+}
