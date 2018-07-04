@@ -1,0 +1,37 @@
+<!--
+  Generated template for the CustomerListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bank of the Simulation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      Simulants
+    </ion-list-header>
+
+    <button ion-item *ngFor="let customer of customers" (click)="handleCustomerClicked(customer)" >
+      <ion-label>
+        <h2>{{ customer.givenName }} {{ customer.surname }}</h2>
+        <ion-note>{{ customer.primaryOccupation }}</ion-note>
+      </ion-label>
+      
+      <ion-label item-right text-right>
+        {{ customer.type }}
+      </ion-label>
+    </button>
+  </ion-list>
+</ion-content>
