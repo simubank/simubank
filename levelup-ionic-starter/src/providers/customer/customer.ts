@@ -24,8 +24,10 @@ export class CustomerProvider {
   constructor(public http: HttpClient) {
   }
 
+  /*
+  This API call is only for demonstration purposes. In your submission app you should not require a list of all customers of the bank
+  */
   getCustomers(){
-    
     return this.http.get(`${ENV.botsApiUrl}/simulants`, httpOptions)
   }
 
